@@ -1,5 +1,6 @@
 # docker-react-express
-Dockerized MERN stack
+Dockerized MERN stack developement environment
   - Install Docker
   - Clone the repo
   - Run `docker-compuse up`
+  - Start coding!
