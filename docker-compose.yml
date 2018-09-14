@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  client:
+    build: ./react-client
+    ports:
+      - 3000:3000
+    volumes: 
+      - ./react-client:/usr/src/app
+
+  server:
+    build: ./express-server
+    ports:
+      - 3001:3000
+    volumes:
+      - ./express-server:/usr/src/app
+    depends_on: 
+      - mongo
+    links: 
+      - mongo
+    
+
+  mongo:
+    image: mongo
+    restart: always
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27017:27017"
+
+  
+
+
+    
+
+    
