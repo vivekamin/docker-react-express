@@ -6,18 +6,23 @@ services:
     ports:
       - 3000:3000
     volumes: 
-      - ./react-client:/usr/src/app
+      - ./react-client/src:/usr/src/app/src
+      - ./react-client/public:/usr/src/app/public
+      
 
   server:
     build: ./express-server
     ports:
       - 3001:3000
     volumes:
-      - ./express-server:/usr/src/app
+      - ./express-server/bin:/usr/src/app/bin
+      - ./express-server/models:/usr/src/app/models
+      - ./express-server/public:/usr/src/app/public
+      - ./express-server/routes:/usr/src/app/routes
+      - ./express-server/app.js:/usr/src/app/app.js
     depends_on: 
       - mongo
-    links: 
-      - mongo
+    
     
 
   mongo:
