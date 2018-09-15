@@ -23,13 +23,14 @@ services:
   mongo:
     image: mongo
     volumes:
-      - ./data:/data/db
+      - data:/data/db
     ports:
       - "27017:27017"
 
 volumes: 
   node_modules:
   node_modules_b:
+  data:
     
 
 
