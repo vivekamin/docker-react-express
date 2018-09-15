@@ -4,3 +4,4 @@ Dockerized MERN stack developement environment
   - Clone the repo
   - Run `docker-compose up`
   - Start coding!
+  - Stop containers and removes volumes:  Run `docker-compose down -v` 
