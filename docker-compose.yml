@@ -6,8 +6,8 @@ services:
     ports:
       - 3000:3000
     volumes: 
-      - ./react-client/src:/usr/src/app/src
-      - ./react-client/public:/usr/src/app/public
+      - ./react-client:/usr/src/app
+      - node_modules:/usr/src/app/node_modules
       
 
   server:
@@ -15,23 +15,23 @@ services:
     ports:
       - 3001:3000
     volumes:
-      - ./express-server/bin:/usr/src/app/bin
-      - ./express-server/models:/usr/src/app/models
-      - ./express-server/public:/usr/src/app/public
-      - ./express-server/routes:/usr/src/app/routes
-      - ./express-server/app.js:/usr/src/app/app.js
+      - ./express-server:/usr/src/backend-app
+      - node_modules_b:/usr/src/backend-app/node_modules
     depends_on: 
       - mongo
-    
-    
 
   mongo:
     image: mongo
-    restart: always
     volumes:
       - ./data:/data/db
     ports:
       - "27017:27017"
+
+volumes: 
+  node_modules:
+  node_modules_b:
+    
+
 
   
 

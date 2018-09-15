@@ -26,7 +26,7 @@ db.on('error', () => {
   console.log("Trying again to connect........");
   setTimeout(()=>{
     mongoose.connect(mongoDB);
-  }, 100);
+  }, 1000);
   
 });
 
