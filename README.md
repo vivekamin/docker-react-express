@@ -1,4 +1,6 @@
 # docker-react-express
+![node1](https://user-images.githubusercontent.com/25477734/48757691-dc2dc900-ec5a-11e8-83ed-bd2b14d6d989.png)
+
 Dockerized MERN stack developement environment
 
 - For MacOS and Ubuntu
